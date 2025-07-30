@@ -32,6 +32,18 @@ Bu proje, PHP ve MySQL kullanarak geliştirilmiş basit bir içerik yönetim sis
     - <img width="664" height="487" alt="image" src="https://github.com/user-attachments/assets/b6cb1d84-782d-4b94-8e17-5323f4c1efc0" />
 ---
 
+## 🗂️ Dosya Yapısı
+
+```bash
+📦 Block Post Management System with PHP
+├── index.php → Yazıların listelendiği anasayfa
+├── ekle.php → Yeni yazı ekleme formu
+├── duzenle.php → Var olan yazıyı düzenleme
+├── sil.php → Yazı silme işlemi
+├── baglan.php → Veritabanı bağlantısı
+└── README.md → Proje açıklama dosyası (bu dosya)
+````
+---
 ## 🧰 Gereksinimler
 
 - PHP 7.x veya üzeri
@@ -100,22 +112,11 @@ Bu proje, PHP ve MySQL kullanarak geliştirilmiş basit bir içerik yönetim sis
 Bu proje kişisel ve eğitim amaçlı kullanımlar için geliştirilmiştir. Ticari projelerde kullanmadan önce geliştiriciye danışılması tavsiye edilir.
 
 ---
-## 🗂️ Dosya Yapısı
-
-```bash
-📦 Block Post Management System with PHP
-├── index.php → Yazıların listelendiği anasayfa
-├── ekle.php → Yeni yazı ekleme formu
-├── duzenle.php → Var olan yazıyı düzenleme
-├── sil.php → Yazı silme işlemi
-├── baglan.php → Veritabanı bağlantısı
-└── README.md → Proje açıklama dosyası (bu dosya)
----
 
 ## 👨‍💻 Geliştirici
 
 > Ad Soyad: **[Hafize ŞENYIL]**  
-> GitHub: [github.com/hafizecim](https://github.com/hafizecim)
+[![GitHub](https://img.shields.io/badge/GitHub-hafizecim-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hafizecim)
 
 ---
 
