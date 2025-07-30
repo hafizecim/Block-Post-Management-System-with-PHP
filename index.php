@@ -42,9 +42,11 @@ $sonuc = $baglanti->query($sql);
             border-radius: 5px;
             font-weight: normal;
             transition: 0.3s;
-            width: 190px; /* Sabit genişlik verildi */
+            width: 190px;
+            /* Sabit genişlik verildi */
             text-align: center;
-            box-sizing: border-box; /* Padding + border dahil olsun genişliğe */
+            box-sizing: border-box;
+            /* Padding + border dahil olsun genişliğe */
 
         }
 
@@ -73,7 +75,8 @@ $sonuc = $baglanti->query($sql);
             font-weight: normal;
             cursor: pointer;
             display: inline-block;
-            min-width: 75px; /* butonun üzerie geldiğinde sağa esneme olmasın diye */
+            min-width: 75px;
+            /* butonun üzerie geldiğinde sağa esneme olmasın diye */
             text-align: center;
 
         }
@@ -113,6 +116,26 @@ $sonuc = $baglanti->query($sql);
             text-decoration: none;
             margin-right: 10px;
         }
+
+        .github-link {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            font-size: 1em;
+            color: #888;
+            text-decoration: none;
+            font-family: 'Lucida Handwriting', sans-serif;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .github-link:hover {
+            color: #CD5C5C;
+            /* background-color: #f1f1f1; */
+        }
     </style>
 </head>
 
@@ -143,6 +166,11 @@ $sonuc = $baglanti->query($sql);
 
         </div>
     <?php endwhile; ?>
+
+    <a href="https://github.com/hafizecim/Block-Post-Management-System-with-PHP" class="github-link"
+        target="_blank">hafize senyıl</a>
+
 </body>
+
 
 </html>

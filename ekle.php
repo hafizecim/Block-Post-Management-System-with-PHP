@@ -94,6 +94,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .back-link:hover {
             color: #CD5C5C;
         }
+
+        .github-link {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            font-size: 1em;
+            color: #888;
+            text-decoration: none;
+            font-family: 'Lucida Handwriting', sans-serif;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .github-link:hover {
+            color: #CD5C5C;
+            /* background-color: #f1f1f1; */
+        }
     </style>
 </head>
 <body>
@@ -117,6 +137,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <a class="back-link" href="index.php">
         <i class="fas fa-arrow-left"></i> Geri Dön
     </a>
+
+    <a href="https://github.com/hafizecim/Block-Post-Management-System-with-PHP" class="github-link"
+        target="_blank">hafize senyıl</a>
 
 </body>
 </html>
