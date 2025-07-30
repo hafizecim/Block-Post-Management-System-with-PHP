@@ -1,18 +1,16 @@
 <?php
 require_once "baglan.php";
 
-// Form gönderildiyse işle
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $baslik = $_POST["baslik"];
     $icerik = $_POST["icerik"];
 
-    // Güvenli veri girişi için prepare kullanımı önerilir ama bu temel haliyle:
     $sql = "INSERT INTO yazilar (baslik, icerik) VALUES (?, ?)";
     $stmt = $baglanti->prepare($sql);
     $stmt->bind_param("ss", $baslik, $icerik);
 
     if ($stmt->execute()) {
-        header("Location: index.php"); // Başarıyla eklendiyse ana sayfaya dön
+        header("Location: index.php");
         exit();
     } else {
         echo "Hata: " . $stmt->error;
@@ -21,23 +19,104 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>Yeni Yazı Ekle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Brush Script MT', cursive;
+            text-align: center;
+            color: #A5402C;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #264653;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 96%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #E6AEA2;
+            color: #CD5C5C;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #CD5C5C;
+            color: #fff;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #264653;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            color: #CD5C5C;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Yeni Blog Yazısı Ekle</h1>
-    <form action="" method="post">
-        <label>Başlık:</label><br>
-        <input type="text" name="baslik" required><br><br>
 
-        <label>İçerik:</label><br>
-        <textarea name="icerik" rows="10" cols="50" required></textarea><br><br>
+    <div class="form-container">
+        <form action="" method="post">
+            <label style="color: #3a5a40; font-weight: bold; font-size: 1em;">Başlık:</label>
+            <input type="text" name="baslik" required>
 
-        <button type="submit">Kaydet</button>
-    </form>
-    <br>
-    <a href="index.php">Geri Dön</a>
+            <label style= "color: #3a5a40; font-weight: bold; font-size: 1em;">İçerik:</label>
+            <textarea name="icerik" rows="10" required></textarea>
+
+            <button type="submit">
+                <i class="fas fa-save"></i> Kaydet
+            </button>
+        </form>
+    </div>
+
+    <a class="back-link" href="index.php">
+        <i class="fas fa-arrow-left"></i> Geri Dön
+    </a>
+
 </body>
 </html>
